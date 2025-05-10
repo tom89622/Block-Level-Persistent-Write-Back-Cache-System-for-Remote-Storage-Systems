@@ -1,0 +1,35 @@
+test_io: (g=0): rw=randread, bs=(R) 4096B-4096B, (W) 4096B-4096B, (T) 4096B-4096B, ioengine=io_uring, iodepth=32
+...
+fio-3.28
+Starting 4 processes
+fio: pid=25663, err=5/file:io_u.c:1845, func=io_u error, error=Input/output error
+fio: pid=25662, err=5/file:io_u.c:1845, func=io_u error, error=Input/output error
+fio: pid=25661, err=5/file:io_u.c:1845, func=io_u error, error=Input/output error
+fio: pid=25664, err=5/file:io_u.c:1845, func=io_u error, error=Input/output error
+
+test_io: (groupid=0, jobs=4): err= 5 (file:io_u.c:1845, func=io_u error, error=Input/output error): pid=25661: Fri Apr 18 15:27:09 2025
+  read: IOPS=574, BW=2178KiB/s (2230kB/s)(9240KiB/4243msec)
+    slat (usec): min=3, max=247, avg=14.46, stdev=11.37
+    clat (msec): min=12, max=321, avg=211.79, stdev=39.61
+     lat (msec): min=12, max=321, avg=211.80, stdev=39.61
+    clat percentiles (msec):
+     |  1.00th=[   64],  5.00th=[  167], 10.00th=[  174], 20.00th=[  186],
+     | 30.00th=[  192], 40.00th=[  201], 50.00th=[  209], 60.00th=[  220],
+     | 70.00th=[  234], 80.00th=[  249], 90.00th=[  262], 95.00th=[  268],
+     | 99.00th=[  300], 99.50th=[  313], 99.90th=[  321], 99.95th=[  321],
+     | 99.99th=[  321]
+   bw (  KiB/s): min= 1800, max= 3008, per=100.00%, avg=2310.00, stdev=111.85, samples=32
+   iops        : min=  450, max=  752, avg=577.50, stdev=27.96, samples=32
+  lat (msec)   : 20=0.16%, 50=0.57%, 100=1.03%, 250=75.72%, 500=17.27%
+  cpu          : usr=0.11%, sys=0.18%, ctx=4436, majf=0, minf=196
+  IO depths    : 1=0.2%, 2=0.3%, 4=0.7%, 8=1.3%, 16=2.6%, 32=94.9%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.1%, 4=99.7%, 8=0.0%, 16=0.0%, 32=0.2%, 64=0.0%, >=64=0.0%
+     issued rwts: total=2438,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=32
+
+Run status group 0 (all jobs):
+   READ: bw=2178KiB/s (2230kB/s), 2178KiB/s-2178KiB/s (2230kB/s-2230kB/s), io=9240KiB (9462kB), run=4243-4243msec
+
+Disk stats (read/write):
+  nbd0: ios=2310/0, merge=0/0, ticks=489225/0, in_queue=489225, util=93.45%
