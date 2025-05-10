@@ -1,5 +1,5 @@
-TARGET		:= busexmp loopback milestone1 min_heap readCache
-LIBOBJS 	:= buse.o milestone1.o min_heap.o readCache.o
+TARGET		:= busexmp loopback main min_heap readCache
+LIBOBJS 	:= buse.o main.o min_heap.o readCache.o
 OBJS		:= $(TARGET:=.o) $(LIBOBJS)
 STATIC_LIB	:= libbuse.a
 
